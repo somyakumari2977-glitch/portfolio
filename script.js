@@ -1,4 +1,3 @@
-
 // =========================
 // MOBILE NAVIGATION
 // =========================
@@ -6,11 +5,9 @@
 const menuButton = document.querySelector(".menu-btn");
 const navLinks = document.querySelector(".nav-links");
 
-if (menuButton && navLinks) {
-    menuButton.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-    });
-}
+menuButton.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
 
 
 // Close menu after clicking a link
@@ -19,9 +16,7 @@ document.querySelectorAll(".nav-links a").forEach((link) => {
 
     link.addEventListener("click", () => {
 
-        if (navLinks) {
-            navLinks.classList.remove("active");
-        }
+        navLinks.classList.remove("active");
 
     });
 
@@ -33,7 +28,7 @@ document.querySelectorAll(".nav-links a").forEach((link) => {
 // =========================
 
 const revealElements = document.querySelectorAll(
-    ".section, .project, .skill-card, .education-item, .achievement-main, .certification-item"
+    ".section, .project, .skill-card, .education-item, .achievement-grid"
 );
 
 const observer = new IntersectionObserver(
@@ -121,11 +116,15 @@ const buttons = document.querySelectorAll(".btn");
 buttons.forEach((button) => {
 
     button.addEventListener("mouseenter", () => {
+
         button.style.transform = "translateY(-3px)";
+
     });
 
     button.addEventListener("mouseleave", () => {
+
         button.style.transform = "translateY(0)";
+
     });
 
 });
@@ -139,8 +138,8 @@ const footerYear = document.querySelector("footer span");
 
 if (footerYear) {
 
-    footerYear.textContent =
-        `© ${new Date().getFullYear()} Ayush Kumar`;
+    const currentYear = new Date().getFullYear();
+
+    footerYear.textContent = `© ${currentYear} Somya Kumari`;
 
 }
-
